@@ -12,9 +12,10 @@ import stdiomask
 
 class stock_alert():
 
-    def __init__(self, ticker_name, profit_threshold):
+    def __init__(self, ticker_name, profit_threshold, period):
         self.ticker_name = ticker_name
         self.profit_threshold = profit_threshold
+        self.period = period
         self.live_stock_price = self.predictedPrice = self.profit = 0
         self.csv_dir = ""
 
@@ -26,7 +27,7 @@ class stock_alert():
 
 
     def get_csv(self):
-        data = yf.download(self.ticker_name, period='5d', interval='5m')
+        data = yf.download(self.ticker_name, period=self.period, interval='5m')
         current_dir = os.path.join(os.getcwd(), 'data')
         self.csv_dir = os.path.join(current_dir, self.ticker_name + '.csv')
         data.to_csv(self.csv_dir)
@@ -34,8 +35,11 @@ class stock_alert():
 
     def predict_price(self):
         # get csv and sort
-        df = pd.read_csv(self.csv_dir, parse_dates=['Datetime'])
+        df = pd.read_csv(self.csv_dir)
         df = df.sort_values(by='Datetime', ascending=False)
+        df['Datetime'] = pd.to_datetime(df['Datetime'], errors='raise', utc=True)
+        print(df.head())
+        print(df['Datetime'].dtype)
 
         #use High, Low, Volume as variables for prediction 
         variables = df[['High', 'Low', 'Volume']]
@@ -83,7 +87,7 @@ class stock_alert():
 
 # get user input for stock 
 stock = stock_alert(
-    str(input("Enter ticker: ")), float(input("Enter profit threshold: "))
+    str(input("Enter ticker: ")), float(input("Enter profit threshold: ")), str(input("Enter the number of days of prior data that you want to train the data on: ")+"d")
 )
 
 stock.get_live_price()
