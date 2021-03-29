@@ -15,6 +15,9 @@ Based on a set of selection criteria, an email alert is sent to the user urging 
 * Current stock price 
 * Expected profit
 
+![alt text](images/email.png?raw=True "Email format.")
+
+
 ## Selection Criteria
 
 ### 1. Bollinger Band 
