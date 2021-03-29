@@ -1,6 +1,6 @@
 # Stock Tracker
 
-*Python module to get stock data, evaluate buy/sell, and send an email to the user with the buy/sell decision*
+*Python module to get stock data, evaluate buy/sell based on a selection criteria, and send an email to the user with the buy/sell decision*
 
 Python module to retrieve the following information based on the ticker provided by the user, from Alpha Vantage and Yahoo Finance: 
 * Current stock price
