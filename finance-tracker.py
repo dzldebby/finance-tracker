@@ -9,8 +9,6 @@ import os
 import stdiomask
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
-from sklearn import datasets, linear_model
-
 from sklearn.linear_model import LinearRegression
 
 class stock_alert():
