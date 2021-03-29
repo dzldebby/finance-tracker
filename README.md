@@ -17,36 +17,35 @@ Based on a set of selection criteria, an email alert is sent to the user urging 
 
 ## Selection Criteria
 
-1. Bollinger Band 
+### 1. Bollinger Band 
+
 Recommend to buy when: 
-* Current stock price > upper Bollinger Band and price goes up for 2 days consecutively 
-* Current stock price < lower Bollinger Band and price goes up for 2 days consecutively 
-
+Current stock price > upper Bollinger Band and price goes up for 2 days consecutively 
+Current stock price < lower Bollinger Band and price goes up for 2 days consecutively 
 Recommend to sell when: 
-* Current stock price > upper Bollinger Band and price goes down for 2 days consecutively
-* Current stock price < lower Bollinger Band and price goes down for 2 days consecutively 
+Current stock price > upper Bollinger Band and price goes down for 2 days consecutively
+Current stock price < lower Bollinger Band and price goes down for 2 days consecutively 
 
-2. Exponential Moving Average 
+### 2. Exponential Moving Average 
+
 Recommend to buy when: 
-* Weekly moving average < weekly moving average or monthly moving average
-
+Weekly moving average < weekly moving average or monthly moving average
 Recommend to sell when: 
-* All else 
+All else 
 
+### 3. Relative Strength Index
 
-3. Relative Strength Index
 Recommend to buy when: 
-* 25 < RSI < 50 
-
+25 < RSI < 50 
 Recommend to sell when: 
-* All else 
+All else 
 
-4. Profit 
+### 4. Profit 
+
 Recommend to buy when: 
-* Predicted stock price > current stock price 
-
+Predicted stock price > current stock price 
 Recommend to sell when: 
-* Profit > price bought 
+Profit > price bought 
 
 ## Usage 
 
